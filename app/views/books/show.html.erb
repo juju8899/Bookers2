@@ -2,9 +2,9 @@
 <div>
   <p>Title : <%= @book.title %></p>
   <p>Opinion : <%= @book.body %></p>
+  <%= image_tag @book.user.get_profile_image(100,100) %>
   <p><%= @book.user.name %></p>
   <% if @book.user == current_user %>
    <%= link_to "Destroy", book_path(@book), method: :delete %>
   <% end %>
-
 </div>
