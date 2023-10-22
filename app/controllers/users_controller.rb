@@ -12,7 +12,6 @@ class UsersController < ApplicationController
     redirect_to book_path(@book.id)
   end
 
-
   def edit
     @user = User.find(params[:id])
   end
