@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3">
-      <%= render 'list', user: @user, newbook: @newbook %>
+      <%= render 'list', user: @user, newbook: @ne %>
     </div>
     <div class="col-md-8 offset-md-1">
         <h2>Book detail</h2>
@@ -25,6 +25,7 @@
                <%= link_to "Destroy", book_path(@book.id), method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-sm btn-danger" %>
               <% end %>
             </td>
+            <td><%= render 'favorites/favorite-btn', book: @book %></td>
           </tr>
          </tb>
         </table>
