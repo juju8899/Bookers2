@@ -12,6 +12,10 @@ class User < ApplicationRecord
   has_many :reverse_of_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followers, through: :reverse_of_relathionships, source: :following
 
+  def is_followed_by?(user)
+   reverse_of_relationships.find_by(following_id: user.id).present?
+  end
+
   has_one_attached :profile_image
 
   validates :name,
